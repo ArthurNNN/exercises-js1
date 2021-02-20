@@ -36,11 +36,10 @@ let badCode = format(multiply(add(startingValue, 10), 2));
 
 /* BETTER PRACTICE */
 
-var var1 = add(startingValue, 10);
-var var2 = multiply(var1, 2);
-var var3 = format(var2);
+var result = add(startingValue, 10);
+result = multiply(result, 2);
 
-let goodCode = var3;
+let goodCode = format(result);
 
 /* ======= TESTS - DO NOT MODIFY ===== 
 There are some Tests in this file that will help you work out if your code is working.
