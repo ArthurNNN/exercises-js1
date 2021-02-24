@@ -43,9 +43,15 @@ Outlook not so good.
 Very doubtful.
 */
 
+
+
 // This should log "The ball has shaken!"
 // and return the answer.
 function shakeBall() {
+  console.log("The ball has shaken!");
+  answer = Math.round(Math.random() * 19);
+  console.log(answers[answer]);
+  return answers[answer];
 }
 
 // This function should say whether the answer it is given is
@@ -55,17 +61,57 @@ function shakeBall() {
 // - very negative
 // This function should expect to be called with any value which was returned by the shakeBall function.
 function checkAnswer(answer) {
+  console.log(answer);
+  console.log(answers[answer]);
+  if ((answer >= 0) && (answer <= 4)) {
+    return "very negative";
+  } else if ((answer >= 5) && (answer <= 9)) {
+    return "negative";
+  } else if ((answer >= 10) && (answer <= 14)) {
+    return "positive";
+  } else if ((answer >= 15) && (answer <= 19)) {
+    return "very positive";
+  }
 }
+
+var answer;
+
+const answers = [
+  'Very doubtful.',
+  'Outlook not so good.',
+  'My sources say no.',
+  'My reply is no.',
+  `Don't count on it.`,
+  'Concentrate and ask again.',
+  'Cannot predict now.',
+  'Better not tell you now.',
+  'Ask again later.',
+  'Reply hazy, try again.',
+  'Signs point to yes.',
+  'Yes.',
+  'Outlook good.',
+  'Most likely.',
+  'As I see it, yes.',
+  'You may rely on it.',
+  'Yes - definitely.',
+  'Without a doubt.',
+  'It is decidedly so.',
+  'It is certain.'
+];
+
+shakeBall();
+checkAnswer(answer);
+
 
 /* ======= TESTS - DO NOT MODIFY =====
 There are some Tests in this file that will help you work out if your code is working.
-
+ 
 To run these tests type `node 3-magic-8-ball.js` into your terminal
 */
 
 const log = console.log;
 let logged;
-console.log = function() {
+console.log = function () {
   log(...arguments);
   logged = arguments[0];
 };
