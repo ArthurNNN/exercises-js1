@@ -8,8 +8,11 @@
 
 var name = "Daniel";
 var danielsRole = "mentor";
+if ((danielsRole === "mentor") || (danielsRole === "student")) {
+  console.log(`Hi, I'm ${name}, I'm a ${danielsRole}`)
+}
 
-/* 
+/*
 EXPECTED RESULT
 ---------------
 Hi, I'm Daniel, I'm a mentor.
