@@ -8,8 +8,15 @@
 
 let n = 10;
 
-function sumTillNum(num){
+function sumTillNum(num) {
 	//your code here
+	let sum = 0;
+	while (num > 0) {
+		sum += num;
+		num--;
+
+	}
+	return sum;
 }
 
 console.log("Sum from 0 to " + n + " is: " + sumTillNum(n));

@@ -3,6 +3,13 @@
 	https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/startsWith
 */
 
+function checkStartWithT(arr) {
+  for (i = 0; i < arr.length ; i++) {
+    if (arr[i].startsWith('T')) {
+      console.log(arr[i])
+    }
+  }
+}
 
 const daysOfWeek = [
   "Monday",
@@ -13,3 +20,5 @@ const daysOfWeek = [
   "Saturday",
   "Sunday",
 ];
+
+checkStartWithT(daysOfWeek);
