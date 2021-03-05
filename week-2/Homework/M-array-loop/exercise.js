@@ -1,10 +1,10 @@
 /*
-	Write a function that receives an array of string, and console.log all strings that start with letter 'T'
-	https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/startsWith
+  Write a function that receives an array of string, and console.log all strings that start with letter 'T'
+  https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/startsWith
 */
 
 function checkStartWithT(arr) {
-  for (i = 0; i < arr.length ; i++) {
+  for (i = 0; i < arr.length; i++) {
     if (arr[i].startsWith('T')) {
       console.log(arr[i])
     }

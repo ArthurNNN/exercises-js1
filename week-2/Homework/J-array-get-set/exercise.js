@@ -9,7 +9,7 @@ function first(arr) {
 }
 
 function last(arr) {
-  return arr[arr.length-1]; // complete this statement
+  return arr[arr.length - 1]; // complete this statement
 }
 
 /* 
@@ -22,7 +22,7 @@ console.log(first(numbers));
 console.log(last(numbers));
 console.log(last(names));
 
-/* 
+/*
   EXPECTED RESULT
   ---------------
   1

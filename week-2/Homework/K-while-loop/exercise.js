@@ -5,6 +5,7 @@
 - You should use a while loop
 
 */
+debugger;
 
 let n = 10;
 
@@ -14,7 +15,6 @@ function sumTillNum(num) {
 	while (num > 0) {
 		sum += num;
 		num--;
-
 	}
 	return sum;
 }
