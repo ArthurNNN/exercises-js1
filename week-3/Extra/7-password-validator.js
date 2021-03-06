@@ -21,57 +21,29 @@ Expected Result:
 PasswordValidationResult=  [false, false, false, false, true]
 
 */
-// function isTheSecondEntry(array, index)
 
-// function itTheSecondEntry(array, item) {
-//   if (array.indexOf(item) == array.lastIndexOf(item)) {
-//     return false
-//   } else {
+function validatePasswords(array) {
 
-//   }
-//   return array.indexOf(item) == array.lastIndexOf(item)
-// }
-
-function validatePasswords(passwords) {
-  let pass = passwords;
-
-  for (i = 0; i < pass.length; i++) {
-    if (!pass.indexOf(pass[i]) === pass.lastIndexOf(pass[i])) {
-      pass[lastIndexOf(pass[i])] = "";
+  // find the second entry of the same password and set it to ""
+  for (i = 0; i < array.length; i++) {
+    if (array.indexOf(array[i]) !== array.lastIndexOf(array[i])) {
+      array[array.lastIndexOf(array[i])] = "";
     }
   }
 
-
-  return pass.map(
+  return array.map(
     item => (item.length >= 5)
       && (/[A-Z]/.test(item))
       && (/[a-z]/.test(item))
       && (/[0-9]/.test(item))
       && (/\W/.test(item))
   )
-
 }
-// && (item => (passwords.indexOf(item) === passwords.lastIndexOf(item)))
-// && (itNotHasDublicate(pass, item))
 
 /* ======= TESTS - DO NOT MODIFY ===== */
 
-
-// const passwords1 = ["123567", "TktE.TJTU", "384#HsHF", "dvyyeyy!5", "tryT3729"]
-
 const passwords1 = ["Se%5", "TktE.TJTU", "384#HsHF", "dvyyeyy!5", "tryT3729"]
 const passwords2 = ["StUFf27%", "Pl3nty!", "Jai33", "shajsaUA**&&", "Pl3nty!"]
-
-let pass = passwords2;
-
-for (i = 0; i < pass.length; i++) {
-  if (pass.indexOf(pass[i]) !== pass.lastIndexOf(pass[i])) {
-    pass[pass.lastIndexOf(pass[i])] = "";
-  }
-}
-
-console.log(pass);
-
 
 const util = require('util');
 
