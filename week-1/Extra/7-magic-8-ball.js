@@ -49,9 +49,8 @@ Very doubtful.
 // and return the answer.
 function shakeBall() {
   console.log("The ball has shaken!");
-  answer = Math.round(Math.random() * 19);
-  console.log(answers[answer]);
-  return answers[answer];
+  answerN = Math.round(Math.random() * 19);
+  return answers[answerN];
 }
 
 // This function should say whether the answer it is given is
@@ -60,9 +59,8 @@ function shakeBall() {
 // - negative
 // - very negative
 // This function should expect to be called with any value which was returned by the shakeBall function.
-function checkAnswer(answer) {
-  console.log(answer);
-  console.log(answers[answer]);
+function checkAnswer(answerF) {
+  answer = answers.indexOf(answerF);
   if ((answer >= 0) && (answer <= 4)) {
     return "very negative";
   } else if ((answer >= 5) && (answer <= 9)) {
