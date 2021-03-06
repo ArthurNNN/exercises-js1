@@ -6,7 +6,7 @@
   - Do not edit any of the existing code
 */
 
-var pairsByIndexRaw = [[0, 3], [1, 2], [2, 1], null, [1], false, "whoops"];
+var pairsByIndexRaw = [[0, 3], [1, 2], [2, 1], null, [1], false, "whoops"]; 
 
 var pairsByIndex = pairsByIndexRaw.filter(element => (element !== null) && 
 (typeof element === 'object') && (element.length === 2) && (element.every(item => typeof item === "number"))); // Complete this statement
