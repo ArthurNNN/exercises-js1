@@ -8,7 +8,8 @@
   NOTE: don't include any element that is not a "family".
 */
 
-function colonisers() {
+function colonisers(array) {
+  return array.filter(item => (item.charAt(0) === 'A')).filter(item => item.includes("family"));
 
 }
 
@@ -32,14 +33,14 @@ const voyagers = [
 const util = require('util');
 
 function test(test_name, actual, expected) {
-    let status;
-    if (util.isDeepStrictEqual(actual, expected)) {
-        status = "PASSED";
-    } else {
-        status = `FAILED: expected: ${util.inspect(expected)} but your function returned: ${util.inspect(actual)}`;
-    }
+  let status;
+  if (util.isDeepStrictEqual(actual, expected)) {
+    status = "PASSED";
+  } else {
+    status = `FAILED: expected: ${util.inspect(expected)} but your function returned: ${util.inspect(actual)}`;
+  }
 
-    console.log(`${test_name}: ${status}`);
+  console.log(`${test_name}: ${status}`);
 }
 
 test(
