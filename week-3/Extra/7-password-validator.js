@@ -21,34 +21,76 @@ Expected Result:
 PasswordValidationResult=  [false, false, false, false, true]
 
 */
+// function isTheSecondEntry(array, index)
+
+// function itTheSecondEntry(array, item) {
+//   if (array.indexOf(item) == array.lastIndexOf(item)) {
+//     return false
+//   } else {
+
+//   }
+//   return array.indexOf(item) == array.lastIndexOf(item)
+// }
 
 function validatePasswords(passwords) {
+  let pass = passwords;
+
+  for (i = 0; i < pass.length; i++) {
+    if (!pass.indexOf(pass[i]) === pass.lastIndexOf(pass[i])) {
+      pass[lastIndexOf(pass[i])] = "";
+    }
+  }
+
+
+  return pass.map(
+    item => (item.length >= 5)
+      && (/[A-Z]/.test(item))
+      && (/[a-z]/.test(item))
+      && (/[0-9]/.test(item))
+      && (/\W/.test(item))
+  )
 
 }
+// && (item => (passwords.indexOf(item) === passwords.lastIndexOf(item)))
+// && (itNotHasDublicate(pass, item))
 
 /* ======= TESTS - DO NOT MODIFY ===== */
+
+
+// const passwords1 = ["123567", "TktE.TJTU", "384#HsHF", "dvyyeyy!5", "tryT3729"]
 
 const passwords1 = ["Se%5", "TktE.TJTU", "384#HsHF", "dvyyeyy!5", "tryT3729"]
 const passwords2 = ["StUFf27%", "Pl3nty!", "Jai33", "shajsaUA**&&", "Pl3nty!"]
 
+let pass = passwords2;
+
+for (i = 0; i < pass.length; i++) {
+  if (pass.indexOf(pass[i]) !== pass.lastIndexOf(pass[i])) {
+    pass[pass.lastIndexOf(pass[i])] = "";
+  }
+}
+
+console.log(pass);
+
+
 const util = require('util');
 
 function test(test_name, actual, expected) {
-    let status;
-    if (util.isDeepStrictEqual(actual, expected)) {
-        status = "PASSED";
-    } else {
-        status = `FAILED: expected: ${util.inspect(expected)} but your function returned: ${util.inspect(actual)}`;
-    }
+  let status;
+  if (util.isDeepStrictEqual(actual, expected)) {
+    status = "PASSED";
+  } else {
+    status = `FAILED: expected: ${util.inspect(expected)} but your function returned: ${util.inspect(actual)}`;
+  }
 
-    console.log(`${test_name}: ${status}`);
+  console.log(`${test_name}: ${status}`);
 }
 
 test(
   "validatePasswords function works - case 1",
   validatePasswords(passwords1),
   [false, false, true, false, false]
- );
+);
 
 test(
   "validatePasswords function works - case 2",
