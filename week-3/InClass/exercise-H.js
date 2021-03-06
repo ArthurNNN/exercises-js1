@@ -11,6 +11,6 @@ function isNameinArray(name, names) {
     }
 }
 
-isNameinArray("Artur", names);
+isNameinArray("Irina", names);
 
-// names.find(isNameInArray("Artur", names));
+isNameinArray("Arthur", names);
