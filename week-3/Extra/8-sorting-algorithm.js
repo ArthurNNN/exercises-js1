@@ -15,9 +15,24 @@ You don't have to worry about making this algorithm work fast! The idea is to ge
 */
 
 function sortAges(arr) {
-  arr1 = arr.filter(item => typeof item === "number");
-  arr2 = arr1.sort((a, b) => a - b);
-  return arr2;
+  i = 0;
+  while (i < arr.length) {
+    if (typeof arr[i] !== 'number') {
+      arr.splice(i, 1);
+    } else {
+      i++;
+    }
+  }
+
+  for (i = 0; i < arr.length; i++) {
+    for (j = 0; j < arr.length; j++)
+      if (arr[j] > arr[i]) {
+        tmp = arr[j];
+        arr[j] = arr[i];
+        arr[i] = tmp;
+      }
+  }
+  return arr;
 }
 
 /* ======= TESTS - DO NOT MODIFY ===== */

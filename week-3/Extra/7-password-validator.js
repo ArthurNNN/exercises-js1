@@ -24,7 +24,7 @@ PasswordValidationResult=  [false, false, false, false, true]
 
 function validatePasswords(array) {
 
-  // find the second entry of the same password and set it to ""
+  // find the non-first entries of the same password and set it to ""
   for (i = 0; i < array.length; i++) {
     for (j = i+1; j < array.length; j++)
     if (array[j] === array[i]){
@@ -33,7 +33,8 @@ function validatePasswords(array) {
   }
 
   return array.map(
-    item => (item.length >= 5)
+    item => (
+      item.length >= 5)
       && (/[A-Z]/.test(item))
       && (/[a-z]/.test(item))
       && (/[0-9]/.test(item))
