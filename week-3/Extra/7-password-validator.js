@@ -26,8 +26,9 @@ function validatePasswords(array) {
 
   // find the second entry of the same password and set it to ""
   for (i = 0; i < array.length; i++) {
-    if (array.indexOf(array[i]) !== array.lastIndexOf(array[i])) {
-      array[array.lastIndexOf(array[i])] = "";
+    for (j = i+1; j < array.length; j++)
+    if (array[j] === array[i]){
+      array[j] = "";
     }
   }
 
@@ -44,6 +45,7 @@ function validatePasswords(array) {
 
 const passwords1 = ["Se%5", "TktE.TJTU", "384#HsHF", "dvyyeyy!5", "tryT3729"]
 const passwords2 = ["StUFf27%", "Pl3nty!", "Jai33", "shajsaUA**&&", "Pl3nty!"]
+
 
 const util = require('util');
 
